@@ -1399,6 +1399,110 @@
     font-style: italic;
   }
 
+  /* ===== 最新ブログ ===== */
+  .latest-blog {
+    padding: 6rem 4rem;
+    background: var(--base-warm);
+  }
+  .latest-blog-inner { max-width: 1300px; margin: 0 auto; }
+  .latest-blog-header {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 1.5rem;
+  }
+  .latest-blog-intro {
+    max-width: 700px;
+    color: var(--soft-ink);
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .blog-card {
+    background: var(--white);
+    padding: 2rem 1.8rem;
+    text-decoration: none;
+    color: var(--ink);
+    border-top: 3px solid var(--gold);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(27, 111, 140, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(27, 111, 140, 0.18);
+    border-top-color: var(--miyako-blue);
+  }
+  .blog-card-meta {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .blog-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--gold-deep);
+    letter-spacing: 0.1em;
+  }
+  .blog-tag {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--miyako-blue);
+    background: rgba(27, 111, 140, 0.08);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+  }
+  .blog-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    flex: 1;
+  }
+  .blog-card-desc {
+    font-size: 0.85rem;
+    color: var(--soft-ink);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .blog-card-more {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--gold-deep);
+    letter-spacing: 0.1em;
+    transition: color 0.3s, transform 0.3s;
+  }
+  .blog-card:hover .blog-card-more {
+    color: var(--miyako-blue);
+    transform: translateX(4px);
+  }
+  .blog-loading, .blog-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--soft-ink);
+    font-style: italic;
+  }
+  @media (max-width: 1024px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .latest-blog { padding: 4rem 1.5rem; }
+    .blog-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .latest-blog-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+
   /* ===== 会社概要 ===== */
   .company {
     padding: 6rem 4rem;
@@ -1658,6 +1762,7 @@
       <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#service">Service</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#company">Company</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1671,9 +1776,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="photo_019.jpg">
-    <source src="hero.webm" type="video/webm">
-    <source src="hero.mp4" type="video/mp4">
+  <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/photo_019.jpg">
+    <source src="images/hero.webm" type="video/webm">
+    <source src="images/hero.mp4" type="video/mp4">
     お使いのブラウザは動画タグに対応していません。
   </video>
   <div class="hero-overlay"></div>
@@ -1785,15 +1890,15 @@
 
     <!-- 3列×3行のグリッドギャラリー -->
     <div class="about-grid">
-      <div class="about-grid-img"><img src="photo_019.jpg" alt="宮古島ホテル記念日サプライズ" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_021.jpg" alt="バースデー装飾" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_005.jpg" alt="バースデーサプライズ" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_015.jpg" alt="プロポーズ演出" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_010.jpg" alt="ウェディング装飾" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_017.jpg" alt="バルーン装飾実例" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_001.jpg" alt="イベント装飾" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_020.jpg" alt="記念日演出" loading="lazy"></div>
-      <div class="about-grid-img"><img src="photo_018.jpg" alt="バルーン装飾" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_019.jpg" alt="宮古島ホテル記念日サプライズ" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_021.jpg" alt="バースデー装飾" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_005.jpg" alt="バースデーサプライズ" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_015.jpg" alt="プロポーズ演出" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_010.jpg" alt="ウェディング装飾" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_017.jpg" alt="バルーン装飾実例" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_001.jpg" alt="イベント装飾" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_020.jpg" alt="記念日演出" loading="lazy"></div>
+      <div class="about-grid-img"><img src="images/photo_018.jpg" alt="バルーン装飾" loading="lazy"></div>
     </div>
 
     <!-- お問い合わせCTAボタン -->
@@ -1821,74 +1926,74 @@
     <div class="slider-track track-1">
       <!-- 上段 1セット目 -->
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_019.jpg" alt="ホテル記念日サプライズ" loading="lazy">
+        <div class="slide-img"><img src="images/photo_019.jpg" alt="ホテル記念日サプライズ" loading="lazy">
           <span class="slide-label">Hotel Surprise</span>
           <span class="slide-jp">ホテルサプライズ</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_015.jpg" alt="プロポーズ演出" loading="lazy">
+        <div class="slide-img"><img src="images/photo_015.jpg" alt="プロポーズ演出" loading="lazy">
           <span class="slide-label">Proposal</span>
           <span class="slide-jp">プロポーズ演出</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_005.jpg" alt="記念日サプライズ" loading="lazy">
+        <div class="slide-img"><img src="images/photo_005.jpg" alt="記念日サプライズ" loading="lazy">
           <span class="slide-label">Anniversary</span>
           <span class="slide-jp">記念日サプライズ</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_020.jpg" alt="バースデー装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_020.jpg" alt="バースデー装飾" loading="lazy">
           <span class="slide-label">Birthday</span>
           <span class="slide-jp">バースデー装飾</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_010.jpg" alt="ウェディング装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_010.jpg" alt="ウェディング装飾" loading="lazy">
           <span class="slide-label">Wedding</span>
           <span class="slide-jp">ウェディング装飾</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_001.jpg" alt="オーダーメイド装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_001.jpg" alt="オーダーメイド装飾" loading="lazy">
           <span class="slide-label">Custom Order</span>
           <span class="slide-jp">オーダーメイド</span>
         </div>
       </div>
       <!-- 上段 2セット目（無限ループ用） -->
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_019.jpg" alt="ホテル記念日サプライズ" loading="lazy">
+        <div class="slide-img"><img src="images/photo_019.jpg" alt="ホテル記念日サプライズ" loading="lazy">
           <span class="slide-label">Hotel Surprise</span>
           <span class="slide-jp">ホテルサプライズ</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_015.jpg" alt="プロポーズ演出" loading="lazy">
+        <div class="slide-img"><img src="images/photo_015.jpg" alt="プロポーズ演出" loading="lazy">
           <span class="slide-label">Proposal</span>
           <span class="slide-jp">プロポーズ演出</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_005.jpg" alt="記念日サプライズ" loading="lazy">
+        <div class="slide-img"><img src="images/photo_005.jpg" alt="記念日サプライズ" loading="lazy">
           <span class="slide-label">Anniversary</span>
           <span class="slide-jp">記念日サプライズ</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_020.jpg" alt="バースデー装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_020.jpg" alt="バースデー装飾" loading="lazy">
           <span class="slide-label">Birthday</span>
           <span class="slide-jp">バースデー装飾</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_010.jpg" alt="ウェディング装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_010.jpg" alt="ウェディング装飾" loading="lazy">
           <span class="slide-label">Wedding</span>
           <span class="slide-jp">ウェディング装飾</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_001.jpg" alt="オーダーメイド装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_001.jpg" alt="オーダーメイド装飾" loading="lazy">
           <span class="slide-label">Custom Order</span>
           <span class="slide-jp">オーダーメイド</span>
         </div>
@@ -1898,74 +2003,74 @@
     <div class="slider-track track-2">
       <!-- 下段 1セット目（並び順を変えて多様性を出す） -->
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_021.jpg" alt="リゾートウェディング装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_021.jpg" alt="リゾートウェディング装飾" loading="lazy">
           <span class="slide-label">Wedding</span>
           <span class="slide-jp">リゾートウェディング</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_003.jpg" alt="結婚記念日装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_003.jpg" alt="結婚記念日装飾" loading="lazy">
           <span class="slide-label">Memorial Day</span>
           <span class="slide-jp">結婚記念日</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_018.jpg" alt="スイートルーム装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_018.jpg" alt="スイートルーム装飾" loading="lazy">
           <span class="slide-label">Suite Room</span>
           <span class="slide-jp">スイートルーム装飾</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_023.jpg" alt="サプライズ演出" loading="lazy">
+        <div class="slide-img"><img src="images/photo_023.jpg" alt="サプライズ演出" loading="lazy">
           <span class="slide-label">Surprise Box</span>
           <span class="slide-jp">サプライズ演出</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_006.jpg" alt="お子様バースデー" loading="lazy">
+        <div class="slide-img"><img src="images/photo_006.jpg" alt="お子様バースデー" loading="lazy">
           <span class="slide-label">Kids Birthday</span>
           <span class="slide-jp">お子様バースデー</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_017.jpg" alt="婚約サプライズ" loading="lazy">
+        <div class="slide-img"><img src="images/photo_017.jpg" alt="婚約サプライズ" loading="lazy">
           <span class="slide-label">Engagement</span>
           <span class="slide-jp">婚約サプライズ</span>
         </div>
       </div>
       <!-- 下段 2セット目（無限ループ用） -->
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_021.jpg" alt="リゾートウェディング装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_021.jpg" alt="リゾートウェディング装飾" loading="lazy">
           <span class="slide-label">Wedding</span>
           <span class="slide-jp">リゾートウェディング</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_003.jpg" alt="結婚記念日装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_003.jpg" alt="結婚記念日装飾" loading="lazy">
           <span class="slide-label">Memorial Day</span>
           <span class="slide-jp">結婚記念日</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_018.jpg" alt="スイートルーム装飾" loading="lazy">
+        <div class="slide-img"><img src="images/photo_018.jpg" alt="スイートルーム装飾" loading="lazy">
           <span class="slide-label">Suite Room</span>
           <span class="slide-jp">スイートルーム装飾</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_023.jpg" alt="サプライズ演出" loading="lazy">
+        <div class="slide-img"><img src="images/photo_023.jpg" alt="サプライズ演出" loading="lazy">
           <span class="slide-label">Surprise Box</span>
           <span class="slide-jp">サプライズ演出</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_006.jpg" alt="お子様バースデー" loading="lazy">
+        <div class="slide-img"><img src="images/photo_006.jpg" alt="お子様バースデー" loading="lazy">
           <span class="slide-label">Kids Birthday</span>
           <span class="slide-jp">お子様バースデー</span>
         </div>
       </div>
       <div class="slide-card">
-        <div class="slide-img"><img src="photo_017.jpg" alt="婚約サプライズ" loading="lazy">
+        <div class="slide-img"><img src="images/photo_017.jpg" alt="婚約サプライズ" loading="lazy">
           <span class="slide-label">Engagement</span>
           <span class="slide-jp">婚約サプライズ</span>
         </div>
@@ -1990,7 +2095,7 @@
     <div class="service-cards">
       <a href="#" class="svc-card">
         <div class="svc-card-image">
-          <img src="photo_019.jpg" alt="宮古島ホテルサプライズ装飾">
+          <img src="images/photo_019.jpg" alt="宮古島ホテルサプライズ装飾">
         </div>
         <div class="svc-card-overlay">
           <span class="svc-number">01</span>
@@ -2005,7 +2110,7 @@
 
       <a href="#" class="svc-card">
         <div class="svc-card-image">
-          <img src="photo_015.jpg" alt="宮古島プロポーズ演出">
+          <img src="images/photo_015.jpg" alt="宮古島プロポーズ演出">
         </div>
         <div class="svc-card-overlay">
           <span class="svc-number">02</span>
@@ -2020,7 +2125,7 @@
 
       <a href="#" class="svc-card">
         <div class="svc-card-image">
-          <img src="photo_010.jpg" alt="リゾートウェディング装飾">
+          <img src="images/photo_010.jpg" alt="リゾートウェディング装飾">
         </div>
         <div class="svc-card-overlay">
           <span class="svc-number">03</span>
@@ -2035,7 +2140,7 @@
 
       <a href="#" class="svc-card">
         <div class="svc-card-image">
-          <img src="photo_020.jpg" alt="記念日・誕生日サプライズ">
+          <img src="images/photo_020.jpg" alt="記念日・誕生日サプライズ">
         </div>
         <div class="svc-card-overlay">
           <span class="svc-number">04</span>
@@ -2050,7 +2155,7 @@
 
       <a href="#" class="svc-card">
         <div class="svc-card-image">
-          <img src="photo_001.jpg" alt="店舗・イベント装飾">
+          <img src="images/photo_001.jpg" alt="店舗・イベント装飾">
         </div>
         <div class="svc-card-overlay">
           <span class="svc-number">05</span>
@@ -2065,7 +2170,7 @@
 
       <a href="#" class="svc-card">
         <div class="svc-card-image">
-          <img src="photo_005.jpg" alt="オーダーメイド装飾">
+          <img src="images/photo_005.jpg" alt="オーダーメイド装飾">
         </div>
         <div class="svc-card-overlay">
           <span class="svc-number">06</span>
@@ -2099,7 +2204,7 @@
       <div class="voice-card">
         <div class="voice-card-label">HOTEL SURPRISE</div>
         <div class="voice-card-img">
-          <img src="staff_iha.jpg" alt="DAYSBalloon スタッフ IHA" loading="lazy">
+          <img src="images/staff_iha.jpg" alt="DAYSBalloon スタッフ IHA" loading="lazy">
         </div>
         <div class="voice-card-info">
           <span class="voice-card-tag">HOTEL</span>
@@ -2110,7 +2215,7 @@
       <div class="voice-card">
         <div class="voice-card-label">WEDDING DECOR</div>
         <div class="voice-card-img">
-          <img src="staff_tokunaga.jpg" alt="DAYSBalloon スタッフ TOKUNAGA" loading="lazy">
+          <img src="images/staff_tokunaga.jpg" alt="DAYSBalloon スタッフ TOKUNAGA" loading="lazy">
         </div>
         <div class="voice-card-info">
           <span class="voice-card-tag">WEDDING</span>
@@ -2139,6 +2244,68 @@
 </section>
 
 
+
+<!-- 最新ブログ記事 -->
+<section class="latest-blog reveal" id="blog">
+  <div class="latest-blog-inner">
+    <div class="latest-blog-header">
+      <div>
+        <h2 class="section-title-en"><em>Blog</em></h2>
+        <p class="section-title-jp">最新の記事</p>
+      </div>
+      <a href="/blog/" class="see-all">See All</a>
+    </div>
+
+    <p class="latest-blog-intro">宮古島のバルーン装飾・サプライズ演出に関する情報を、定期的にお届けします。</p>
+
+    <div class="blog-grid" id="blog-grid">
+      <!-- 自動生成されたブログ記事がここに表示されます -->
+      <div class="blog-loading">記事を読み込み中...</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ブログ記事自動表示
+  (async function loadBlogPosts() {
+    try {
+      const response = await fetch('/blog/index.json');
+      if (!response.ok) {
+        document.getElementById('blog-grid').innerHTML = '<p class="blog-empty">記事は近日公開予定です。</p>';
+        return;
+      }
+      const articles = await response.json();
+      const latest3 = articles.slice(0, 3);
+
+      if (latest3.length === 0) {
+        document.getElementById('blog-grid').innerHTML = '<p class="blog-empty">記事は近日公開予定です。</p>';
+        return;
+      }
+
+      const html = latest3.map(article => {
+        const date = new Date(article.date);
+        const dateStr = date.getFullYear() + '.' +
+          String(date.getMonth() + 1).padStart(2, '0') + '.' +
+          String(date.getDate()).padStart(2, '0');
+        return `
+          <a href="/blog/${article.slug}.html" class="blog-card">
+            <div class="blog-card-meta">
+              <span class="blog-date">${dateStr}</span>
+              <span class="blog-tag">${article.category}</span>
+            </div>
+            <h3 class="blog-card-title">${article.title}</h3>
+            <p class="blog-card-desc">${article.description}</p>
+            <span class="blog-card-more">記事を読む →</span>
+          </a>
+        `;
+      }).join('');
+
+      document.getElementById('blog-grid').innerHTML = html;
+    } catch (e) {
+      document.getElementById('blog-grid').innerHTML = '<p class="blog-empty">記事は近日公開予定です。</p>';
+    }
+  })();
+</script>
 
 <!-- 円弧アニメーション英文コピー -->
 <section class="arc-banner">
@@ -2249,6 +2416,7 @@
           <ul>
             <li><a href="#philosophy">私たちについて</a></li>
             <li><a href="#about">ギャラリー</a></li>
+            <li><a href="#blog">最新の記事</a></li>
             <li><a href="#company">会社概要</a></li>
           </ul>
         </div>
