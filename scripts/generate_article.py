@@ -63,8 +63,10 @@ def call_anthropic(topic):
     )
     with urllib.request.urlopen(req, timeout=120) as r:
         data = json.loads(r.read().decode("utf-8"))
-    return data["content"][0]["text"].strip()
-
+    text = data["content"][0]["text"].strip()
+    text = re.sub(r'^```[a-zA-Z]*\n?', '', text)
+    text = re.sub(r'\n?```$', '', text)
+    return text.strip()
 
 def render_article(title, desc, slug, date, category, content):
     head = (
