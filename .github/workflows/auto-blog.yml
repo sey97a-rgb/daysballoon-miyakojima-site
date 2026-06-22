@@ -1,9 +1,9 @@
 name: auto-blog
-
 on:
-  schedule:
-    # 週3回（月・水・金）日本時間 10:00 = UTC 01:00
-    - cron: '0 1 * * 1,3,5'
+  # schedule:  # 自動投稿を一時停止（重複コンテンツ対策・SEO評価回復のため）。手動実行のみ。
+    #   # 週3回（月・水・金）日本時間 10:00 = UTC 01:00
+      #   - cron: '0 1 * * 1,3,5'
+      
   workflow_dispatch:
 
 permissions:
